@@ -1,73 +1,87 @@
-# React + TypeScript + Vite
+# TokHistory
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Visualize e organize seus vídeos curtidos do TikTok usando o arquivo JSON exportado oficialmente.
 
-Currently, two official plugins are available:
+Seus dados são processados 100% no navegador. Nada é enviado para servidores.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔥 Demo
 
-## React Compiler
+Acesse aqui:
+[https://tokhistory.vercel.app](https://tokhistory.vercel.app)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📸 Preview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Mobile Home
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+<p align="center">
+  <img src="public/img/Home.png" width="340"/>
+</p>
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Mobile Preview
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<p align="center">
+  <img src="public/img/Home.gif" width="340"/>
+</p>
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎯 Problema
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+O TikTok não permite ordenar os vídeos curtidos cronologicamente (do mais antigo para o mais recente).  
+Além disso, a aba de curtidos utiliza scroll infinito, dificultando a navegação.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+O TokHistory resolve isso permitindo:
+
+- Ordenação por data
+- Filtro por ano
+- Paginação
+- Player embutido
+- Interface otimizada para mobile
+
+---
+
+## 🛠️ Como funciona
+
+1. No TikTok, vá em:
+   Perfil → Configurações e privacidade → Conta → Baixar seus dados
+2. Escolha o formato **JSON**
+3. Faça upload do arquivo no TokHistory
+4. Navegue seus likes com filtros e organização
+
+Todos os dados são processados localmente no navegador.
+
+---
+
+## 🚀 Funcionalidades
+
+- Upload de JSON oficial do TikTok
+- Parser tipado e seguro
+- Validação de erro para JSON inválido
+- Ordenação ascendente e descendente
+- Filtro por ano
+- Paginação performática
+- Scroll automático entre páginas
+- Player embutido do TikTok
+- Interface dark responsiva
+
+---
+
+## 🧠 Tecnologias Utilizadas
+
+- React
+- TypeScript
+- Vite
+- TailwindCSS
+- Vercel (deploy)
+
+---
+
+## 💻 Rodando localmente
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/SEUUSUARIO/tokhistory.git
+cd tokhistory
+npm install
+npm run dev
